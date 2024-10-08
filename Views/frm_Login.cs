@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Schema;
+using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
+using ProjetoAgenda.data;
 
 namespace ProjetoAgenda
 {
@@ -32,6 +36,26 @@ namespace ProjetoAgenda
         private void lbl_nome_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_cadastro_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conexao = ConexaoDB.CriarConexao();
+
+            conexao.Open();
+
+            string sql = $"INSERT INTO tbUsuarios (nome, usuario, telefone, senha) VALUES (@nome, @usuario, @telefone, @senha)";
+            
+            MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+            comando.Parameters.AddWithValue("@nome", txt_nome.Text);
+            comando.Parameters.AddWithValue("@usuario", txt_usuario.Text);
+            comando.Parameters.AddWithValue("@telefone", txt_telefone.Text);
+            comando.Parameters.AddWithValue("@senha", txt_senha.Text);
+
+            comando.ExecuteNonQuery();
+
+            conexao.Close(); 
         }
     }
 }
