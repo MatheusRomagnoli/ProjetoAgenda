@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml.Schema;
 using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
+using ProjetoAgenda.data;
 
 namespace ProjetoAgenda
 {
@@ -39,8 +40,7 @@ namespace ProjetoAgenda
 
         private void btn_cadastro_Click(object sender, EventArgs e)
         {
-            string stringconexao = "Server = 127.0.0.1;Database=dbAgenda;User ID=root;Password=root;";
-            MySqlConnection conexao = new MySqlConnection(stringconexao);
+            MySqlConnection conexao = ConexaoDB.CriarConexao();
 
             conexao.Open();
 
