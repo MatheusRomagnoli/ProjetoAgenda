@@ -104,6 +104,7 @@
             // 
             btn_login.BackColor = Color.Pink;
             btn_login.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_login.Enabled = false;
             btn_login.FlatStyle = FlatStyle.Flat;
             btn_login.Location = new Point(170, 422);
             btn_login.Name = "btn_login";
@@ -111,6 +112,7 @@
             btn_login.TabIndex = 6;
             btn_login.Text = "Logar";
             btn_login.UseVisualStyleBackColor = false;
+            btn_login.Click += btn_login_Click;
             // 
             // frm_cadastro
             // 

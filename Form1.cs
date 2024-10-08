@@ -17,7 +17,7 @@ namespace ProjetoAgenda
             {
                 btn_login.Enabled = false;
             }
-        }                                                                                                                                                                                                                                                                                                                                                         
+        }
 
         private void txt_usuario_TextChanged(object sender, EventArgs e)
         {
@@ -32,6 +32,15 @@ namespace ProjetoAgenda
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            if (btn_login.Enabled = true) 
+            {
+                frm_Informacoes forminfo = new frm_Informacoes();
+                forminfo.ShowDialog();
+            }
         }
     }
 }
