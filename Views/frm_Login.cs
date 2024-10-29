@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml.Schema;
 using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
+using ProjetoAgenda.Controller;
 using ProjetoAgenda.data;
 
 namespace ProjetoAgenda
@@ -40,22 +41,18 @@ namespace ProjetoAgenda
 
         private void btn_cadastro_Click(object sender, EventArgs e)
         {
-            MySqlConnection conexao = ConexaoDB.CriarConexao();
-
-            conexao.Open();
-
-            string sql = $"INSERT INTO tbUsuarios (nome, usuario, telefone, senha) VALUES (@nome, @usuario, @telefone, @senha)";
+            string nome = txt_nome.Text;
+            string usuario = txt_usuario.Text;
+            string telefone = txt_telefone.Text;
+            string senha = txt_senha.Text;
             
-            MySqlCommand comando = new MySqlCommand(sql, conexao);
-
-            comando.Parameters.AddWithValue("@nome", txt_nome.Text);
-            comando.Parameters.AddWithValue("@usuario", txt_usuario.Text);
-            comando.Parameters.AddWithValue("@telefone", txt_telefone.Text);
-            comando.Parameters.AddWithValue("@senha", txt_senha.Text);
-
-            comando.ExecuteNonQuery();
-
-            conexao.Close(); 
+            UsuarioController controleUsuario = new UsuarioController();
+            
+            bool resultado = controleUsuario.AddUsuario(nome, usuario, telefone, senha);
+            if (resultado)
+            {
+                MessageBox.Show("Cadastro efetuado com sucesso");
+            }
         }
     }
 }
