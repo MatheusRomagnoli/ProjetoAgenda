@@ -55,7 +55,11 @@ namespace ProjetoAgenda
 
             comando.ExecuteNonQuery();
 
-            conexao.Close(); 
+            conexao.Close();
+
+
+            MessageBox.Show("parabens voce foi cadastrada(o)!!!");
+            this.Close();
         }
     }
 }
