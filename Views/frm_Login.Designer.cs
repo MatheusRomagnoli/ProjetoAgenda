@@ -88,6 +88,7 @@
             txt_senha.Location = new Point(125, 328);
             txt_senha.Multiline = true;
             txt_senha.Name = "txt_senha";
+            txt_senha.PasswordChar = '*';
             txt_senha.Size = new Size(288, 40);
             txt_senha.TabIndex = 7;
             // 
@@ -128,6 +129,7 @@
             txt_senha2.Location = new Point(125, 409);
             txt_senha2.Multiline = true;
             txt_senha2.Name = "txt_senha2";
+            txt_senha2.PasswordChar = '*';
             txt_senha2.Size = new Size(288, 40);
             txt_senha2.TabIndex = 9;
             // 
