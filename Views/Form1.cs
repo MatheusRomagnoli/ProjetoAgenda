@@ -1,3 +1,6 @@
+using ProjetoAgenda.Controller;
+using ProjetoAgenda.Views;
+
 namespace ProjetoAgenda
 {
     public partial class frm_cadastro : Form
@@ -31,12 +34,26 @@ namespace ProjetoAgenda
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
+            UsuarioController controleUsuario = new UsuarioController();
 
+            bool resultado = controleUsuario.LogarUsuario(txt_usuario.Text, txt_senha.Text);
+
+            MessageBox.Show(resultado.ToString());
+
+            if (resultado)
+            {
+                frm_Principal formPrincipal = new frm_Principal();
+                formPrincipal.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível efetuar o Login, o usuário já exsiste");
+            }
         }
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (btn_login.Enabled = true) 
+            if (btn_login.Enabled == true) 
             {
                 frm_Informacoes forminfo = new frm_Informacoes();
                 forminfo.ShowDialog();
