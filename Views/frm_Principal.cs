@@ -16,5 +16,20 @@ namespace ProjetoAgenda.Views
         {
             InitializeComponent();
         }
+
+        private void frm_Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void qToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void arwToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
