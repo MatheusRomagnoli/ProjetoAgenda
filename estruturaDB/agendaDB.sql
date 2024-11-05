@@ -11,5 +11,5 @@ CREATE TABLE tbUsuarios (
 
 CREATE TABLE tb_categoria (
 	cod_categoria INT AUTO_INCREMENT PRIMARY KEY,
-	nome_categoria VARCHAR(30) NOT NULL
+	nome_categoria VARCHAR(20) NOT NULL
     );
