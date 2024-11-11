@@ -43,7 +43,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { arwToolStripMenuItem, editarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 33);
+            menuStrip1.Padding = new Padding(4, 1, 0, 1);
+            menuStrip1.Size = new Size(560, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -51,14 +52,14 @@
             // 
             arwToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { qToolStripMenuItem });
             arwToolStripMenuItem.Name = "arwToolStripMenuItem";
-            arwToolStripMenuItem.Size = new Size(91, 29);
+            arwToolStripMenuItem.Size = new Size(61, 22);
             arwToolStripMenuItem.Text = "Arquivo";
             arwToolStripMenuItem.Click += arwToolStripMenuItem_Click;
             // 
             // qToolStripMenuItem
             // 
             qToolStripMenuItem.Name = "qToolStripMenuItem";
-            qToolStripMenuItem.Size = new Size(270, 34);
+            qToolStripMenuItem.Size = new Size(180, 22);
             qToolStripMenuItem.Text = "Sair";
             qToolStripMenuItem.Click += qToolStripMenuItem_Click;
             // 
@@ -66,29 +67,31 @@
             // 
             editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem });
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(73, 29);
+            editarToolStripMenuItem.Size = new Size(49, 22);
             editarToolStripMenuItem.Text = "Editar";
             // 
             // cadastrarToolStripMenuItem
             // 
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(270, 34);
+            cadastrarToolStripMenuItem.Size = new Size(180, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // categoriasToolStripMenuItem
             // 
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(270, 34);
+            categoriasToolStripMenuItem.Size = new Size(180, 22);
             categoriasToolStripMenuItem.Text = "Categorias";
+            categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
             // frm_Principal
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(560, 270);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "frm_Principal";
             Text = "frm_Principal";
             Load += frm_Principal_Load;
