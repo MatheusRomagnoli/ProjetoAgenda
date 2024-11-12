@@ -41,6 +41,8 @@ namespace ProjetoAgenda.Views
                 MessageBox.Show("o usuário NÃO foi excluído com sucesso");
             }
 
+            int codigo = (int)dgv_usuarios.SelectedRows[0].Cells[0].Value;
+
             AtualizaDataGridUsuario();
         }
 
