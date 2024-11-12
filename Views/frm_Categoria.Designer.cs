@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            Cadastrar = new Button();
+            btn_excluir = new Button();
+            btn_cadastrar = new Button();
             txt_categoria = new TextBox();
             dgv_categoria = new DataGridView();
             groupBox1.SuspendLayout();
@@ -38,7 +39,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(Cadastrar);
+            groupBox1.Controls.Add(btn_excluir);
+            groupBox1.Controls.Add(btn_cadastrar);
             groupBox1.Controls.Add(txt_categoria);
             groupBox1.Location = new Point(31, 26);
             groupBox1.Name = "groupBox1";
@@ -48,15 +50,25 @@
             groupBox1.Text = "insira o nome da nova categoria";
             groupBox1.Enter += groupBox1_Enter;
             // 
-            // Cadastrar
+            // btn_excluir
             // 
-            Cadastrar.Location = new Point(6, 77);
-            Cadastrar.Name = "Cadastrar";
-            Cadastrar.Size = new Size(207, 41);
-            Cadastrar.TabIndex = 1;
-            Cadastrar.Text = "btn_cadastrar";
-            Cadastrar.UseVisualStyleBackColor = true;
-            Cadastrar.Click += Cadastrar_Click;
+            btn_excluir.Location = new Point(6, 100);
+            btn_excluir.Name = "btn_excluir";
+            btn_excluir.Size = new Size(207, 34);
+            btn_excluir.TabIndex = 2;
+            btn_excluir.Text = "excluir";
+            btn_excluir.UseVisualStyleBackColor = true;
+            btn_excluir.Click += btn_excluir_Click;
+            // 
+            // btn_cadastrar
+            // 
+            btn_cadastrar.Location = new Point(6, 60);
+            btn_cadastrar.Name = "btn_cadastrar";
+            btn_cadastrar.Size = new Size(207, 34);
+            btn_cadastrar.TabIndex = 1;
+            btn_cadastrar.Text = "cadastrar";
+            btn_cadastrar.UseVisualStyleBackColor = true;
+            btn_cadastrar.Click += Cadastrar_Click;
             // 
             // txt_categoria
             // 
@@ -74,6 +86,7 @@
             dgv_categoria.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_categoria.Size = new Size(331, 148);
             dgv_categoria.TabIndex = 1;
+            dgv_categoria.CellContentClick += dgv_categoria_CellContentClick;
             // 
             // frm_Categoria
             // 
@@ -93,8 +106,9 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Button Cadastrar;
+        private Button btn_cadastrar;
         private TextBox txt_categoria;
         private DataGridView dgv_categoria;
+        private Button btn_excluir;
     }
 }

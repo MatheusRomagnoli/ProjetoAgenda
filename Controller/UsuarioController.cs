@@ -2,6 +2,7 @@
 using ProjetoAgenda.data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +79,70 @@ namespace ProjetoAgenda.Controller
             catch
             {
                 return false;
+            }
+        }
+
+        
+        public bool ExcluirUsuario(string usuario)
+        {
+            try
+            {
+                MySqlConnection conexao = ConexaoDB.CriarConexao();
+                string sql = "DELETE from tbUsuarios WHERE usuario = @usuario;";
+                
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand (sql, conexao);
+
+                comando.Parameters.AddWithValue("@usuario", usuario);
+
+                MySqlDataReader resultado = comando.ExecuteReader();
+
+                if (resultado.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public DataTable GetUsers()
+        {
+            MySqlConnection conexao = null;
+
+            try
+            {
+                conexao = ConexaoDB.CriarConexao();
+
+                string sql = "SELECT usuario, nome, telefone FROM tbUsuarios;";
+
+                conexao.Open();
+
+                MySqlDataAdapter adaptador = new MySqlDataAdapter(sql, conexao);
+
+                DataTable tabela = new DataTable();
+
+                adaptador.Fill(tabela);
+
+                return tabela;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"Erro ao recuperar Usuários: {erro.Message}");
+
+                return new DataTable();
+            }
+            finally
+            {
+                conexao.Close();
             }
         }
     

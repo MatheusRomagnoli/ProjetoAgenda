@@ -38,5 +38,15 @@ namespace ProjetoAgenda.Views
             frm_Categoria formcategoria = new frm_Categoria();
             formcategoria.ShowDialog();
         }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void listaUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Usuarios formUsuarios = new frm_Usuarios();
+            formUsuarios.ShowDialog();
+        }
     }
 }
