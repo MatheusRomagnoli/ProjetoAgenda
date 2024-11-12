@@ -97,7 +97,7 @@
             btn_cadastrar.Name = "btn_cadastrar";
             btn_cadastrar.Size = new Size(215, 57);
             btn_cadastrar.TabIndex = 5;
-            btn_cadastrar.Text = "Cadastrar";
+            btn_cadastrar.Text = "logar";
             btn_cadastrar.UseVisualStyleBackColor = false;
             btn_cadastrar.Click += btn_cadastrar_Click;
             // 
@@ -111,7 +111,7 @@
             btn_login.Name = "btn_login";
             btn_login.Size = new Size(215, 57);
             btn_login.TabIndex = 6;
-            btn_login.Text = "Logar";
+            btn_login.Text = "cadastrar";
             btn_login.UseVisualStyleBackColor = false;
             btn_login.Click += btn_login_Click;
             // 

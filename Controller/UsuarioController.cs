@@ -145,6 +145,38 @@ namespace ProjetoAgenda.Controller
                 conexao.Close();
             }
         }
+
+        public bool AlterarSenha(string usuario, string senha)
+        {
+            MySqlConnection conexao = null;
+
+            try
+            {
+                conexao = ConexaoDB.CriarConexao();
+
+                string sql = "UPDATE tbUsuarios SET senha = (@senha) WHERE usuario = (@usuario);";
+
+                conexao.Open();
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+                comando.Parameters.AddWithValue("@usuario", usuario);
+                comando.Parameters.AddWithValue("@senha", senha);
+
+                MySqlDataReader resultado = comando.ExecuteReader();
+                if (resultado.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
     
     }
 }

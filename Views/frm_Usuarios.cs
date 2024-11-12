@@ -28,10 +28,12 @@ namespace ProjetoAgenda.Views
 
         private void btn_excluirUsuario_Click(object sender, EventArgs e)
         {
+
+            string usuarios = (string)dgv_usuarios.SelectedRows[0].Cells[0].Value;
             UsuarioController controleUsuario = new UsuarioController();
 
-            bool resultado = controleUsuario.ExcluirUsuario(txt_usuarios.Text);
-            
+            bool resultado = controleUsuario.ExcluirUsuario(usuarios);
+
             if (resultado)
             {
                 MessageBox.Show("excluido com sucesso");
@@ -41,14 +43,39 @@ namespace ProjetoAgenda.Views
                 MessageBox.Show("o usuário NÃO foi excluído com sucesso");
             }
 
-            int codigo = (int)dgv_usuarios.SelectedRows[0].Cells[0].Value;
+
 
             AtualizaDataGridUsuario();
         }
+
+
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
+
+        private void btn_atualizarSenha_Click(object sender, EventArgs e)
+        {
+            string senha = txt_senha.Text;
+            string usuarios = (string)dgv_usuarios.SelectedRows[0].Cells[0].Value;
+            UsuarioController controleUsuario = new UsuarioController();
+
+            bool resultado = controleUsuario.AlterarSenha(usuarios, senha);
+
+            if (resultado)
+            {
+                MessageBox.Show("alterado com sucesso");
+            }
+            else
+            {
+                MessageBox.Show("a senha foi alterada com sucesso");
+            }
+
+
+
+            AtualizaDataGridUsuario();
+        }
     }
-}
+    }
+
