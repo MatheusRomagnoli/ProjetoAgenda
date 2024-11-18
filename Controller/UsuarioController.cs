@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
+using Mysqlx.Expr;
 using ProjetoAgenda.data;
 using System;
 using System.Collections.Generic;
@@ -29,6 +31,8 @@ namespace ProjetoAgenda.Controller
                 comando.Parameters.AddWithValue("@senha", senha);
 
                 int linhasAfetadas = comando.ExecuteNonQuery();
+
+                this.CriarUsuarioSQL(usuario, senha);
 
                 conexao.Close();
 
@@ -171,6 +175,36 @@ namespace ProjetoAgenda.Controller
                     return false;
                 }
 
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool CriarUsuarioSQL(string usuario, string senha)
+        {
+            MySqlConnection conexao = null;
+
+            try
+            {
+                conexao = ConexaoDB.CriarConexao();
+
+                string sql = $"CREATE USER '{usuario}'@'%' IDENTIFIED BY '{senha}';";
+
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                MySqlDataReader resultado = comando.ExecuteReader();
+                if (resultado.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch
             {
