@@ -22,7 +22,7 @@ INSERT
 ON tb_categoria
 FOR EACH ROW
 BEGIN
-	SET NEW.usuario = CURRENT_USER();
+	SET NEW.usuario = USER();
 END;
 $$
 

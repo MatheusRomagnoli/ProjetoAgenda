@@ -190,7 +190,9 @@ namespace ProjetoAgenda.Controller
             {
                 conexao = ConexaoDB.CriarConexao();
 
-                string sql = $"CREATE USER '{usuario}'@'%' IDENTIFIED BY '{senha}';";
+                string sql = @$"CREATE USER '{usuario}'@'%' IDENTIFIED BY '{senha}'
+                                GRANT select, insert, delete, update on dbagenda.* to '{usuario}'@'%';
+                                FLUSH PRIVILEGES";
 
                 conexao.Open();
 
