@@ -120,5 +120,38 @@ namespace ProjetoAgenda.Controller
                 return false;
             }
         }
+
+        public bool UpdateCategoria(int codigo, string nome_categoria)
+        {
+            MySqlConnection conexao = null;
+
+            try
+            {
+                conexao = ConexaoDB.CriarConexao();
+
+                string sql = "UPDATE tb_categoria SET nome_categoria = @nome_categoria";
+
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                comando.Parameters.AddWithValue("@nome_categoria", nome_categoria);
+                int linhasafetadas = comando.ExecuteNonQuery();
+                conexao.Close();
+
+                if (linhasafetadas > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

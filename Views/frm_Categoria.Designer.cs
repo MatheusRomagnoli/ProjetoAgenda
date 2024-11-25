@@ -33,18 +33,20 @@
             btn_cadastrar = new Button();
             txt_categoria = new TextBox();
             dgv_categoria = new DataGridView();
+            btn_update_categoria = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_categoria).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btn_update_categoria);
             groupBox1.Controls.Add(btn_excluir);
             groupBox1.Controls.Add(btn_cadastrar);
             groupBox1.Controls.Add(txt_categoria);
             groupBox1.Location = new Point(31, 26);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(219, 139);
+            groupBox1.Size = new Size(219, 186);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "insira o nome da nova categoria";
@@ -88,11 +90,21 @@
             dgv_categoria.TabIndex = 1;
             dgv_categoria.CellContentClick += dgv_categoria_CellContentClick;
             // 
+            // btn_update_categoria
+            // 
+            btn_update_categoria.Location = new Point(6, 140);
+            btn_update_categoria.Name = "btn_update_categoria";
+            btn_update_categoria.Size = new Size(207, 34);
+            btn_update_categoria.TabIndex = 3;
+            btn_update_categoria.Text = "update";
+            btn_update_categoria.UseVisualStyleBackColor = true;
+            btn_update_categoria.Click += btn_update_categoria_Click;
+            // 
             // frm_Categoria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(636, 189);
+            ClientSize = new Size(636, 257);
             Controls.Add(dgv_categoria);
             Controls.Add(groupBox1);
             Name = "frm_Categoria";
@@ -110,5 +122,6 @@
         private TextBox txt_categoria;
         private DataGridView dgv_categoria;
         private Button btn_excluir;
+        private Button btn_update_categoria;
     }
 }

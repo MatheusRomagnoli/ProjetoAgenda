@@ -59,9 +59,10 @@ namespace ProjetoAgenda.Views
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
+            int codigo = (int)dgv_categoria.SelectedRows[0].Cells[0].Value;
             CategoriaController controleCategoria = new CategoriaController();
 
-            bool resultado = controleCategoria.ExcluirCategoria(Convert.ToInt32(txt_categoria.Text));
+            bool resultado = controleCategoria.ExcluirCategoria(codigo);
 
             if (resultado)
             {
@@ -73,7 +74,7 @@ namespace ProjetoAgenda.Views
             }
 
 
-            int codigo = (int)dgv_categoria.SelectedRows[0].Cells[0].Value;
+            
 
             AtualizaDataGrid();
         }
@@ -81,6 +82,27 @@ namespace ProjetoAgenda.Views
         private void dgv_categoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_update_categoria_Click(object sender, EventArgs e)
+        {
+            int codigo = (int)dgv_categoria.SelectedRows[0].Cells[0].Value;
+            CategoriaController controleCategoria = new CategoriaController();
+            bool resultado = controleCategoria.UpdateCategoria(codigo, txt_categoria.Text);
+            
+            if (resultado)
+            {
+                MessageBox.Show("Categoria Alterada");
+            }
+            else
+            {
+                MessageBox.Show("Categoria não Alterada");
+            }
+
+
+           
+
+            AtualizaDataGrid();
         }
     }
 }
