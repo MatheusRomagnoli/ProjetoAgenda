@@ -190,7 +190,7 @@ namespace ProjetoAgenda.Controller
             {
                 conexao = ConexaoDB.CriarConexao();
 
-                string sql = @$"CREATE USER '{usuario}'@'%' IDENTIFIED BY '{senha}'
+                string sql = @$"CREATE USER '{usuario}'@'%' IDENTIFIED BY '{senha}';
                                 GRANT select, insert, delete, update on dbagenda.* to '{usuario}'@'%';
                                 FLUSH PRIVILEGES";
 
@@ -208,8 +208,9 @@ namespace ProjetoAgenda.Controller
                     return false;
                 }
             }
-            catch
+            catch (System.Exception erro)
             {
+                MessageBox.Show($"erro ao criar usuário: {erro.Message}");
                 return false;
             }
         }

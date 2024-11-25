@@ -1,4 +1,5 @@
 using ProjetoAgenda.Views;
+using System.Net.Http.Headers;
 
 namespace ProjetoAgenda
 {
@@ -14,6 +15,7 @@ namespace ProjetoAgenda
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new frm_cadastro());
+            Application.Run(new frm_Categoria());
             //Application.Run(new frm_Principal());
         }
     }
