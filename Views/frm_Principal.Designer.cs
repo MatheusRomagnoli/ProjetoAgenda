@@ -97,7 +97,7 @@
             // listaUsuáriosToolStripMenuItem
             // 
             listaUsuáriosToolStripMenuItem.Name = "listaUsuáriosToolStripMenuItem";
-            listaUsuáriosToolStripMenuItem.Size = new Size(180, 22);
+            listaUsuáriosToolStripMenuItem.Size = new Size(146, 22);
             listaUsuáriosToolStripMenuItem.Text = "Lista Usuários";
             listaUsuáriosToolStripMenuItem.Click += listaUsuáriosToolStripMenuItem_Click;
             // 
