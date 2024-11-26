@@ -57,9 +57,9 @@ namespace ProjetoAgenda.Controller
 
             try
             {
-                conexao = ConexaoDB.CriarConexao();
+                conexao = ConexaoDB.CriarConexao(UserSession.usuario, UserSession.senha);
 
-                string sql = "SELECT cod_categoria AS 'Código', nome_categoria AS 'Categoria' FROM tb_categoria WHERE usuario LIKE '@usuario@%';";
+                string sql = "SELECT cod_categoria AS 'Código', nome_categoria AS 'Categoria' FROM tb_categoria WHERE usuario = User();";
 
                 conexao.Open();
 

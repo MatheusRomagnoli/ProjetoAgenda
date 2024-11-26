@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoAgenda.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,6 +48,17 @@ namespace ProjetoAgenda.Views
         {
             frm_Usuarios formUsuarios = new frm_Usuarios();
             formUsuarios.ShowDialog();
+        }
+
+        private void calendárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void agendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_calendario frmcalendario = new frm_calendario();
+            frmcalendario.ShowDialog();
         }
     }
 }

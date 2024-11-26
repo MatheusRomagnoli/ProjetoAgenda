@@ -36,6 +36,7 @@
             categoriasToolStripMenuItem = new ToolStripMenuItem();
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
             listaUsuáriosToolStripMenuItem = new ToolStripMenuItem();
+            agendaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,8 +46,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { arwToolStripMenuItem, editarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(4, 1, 0, 1);
-            menuStrip1.Size = new Size(560, 24);
+            menuStrip1.Padding = new Padding(5, 1, 0, 1);
+            menuStrip1.Size = new Size(640, 26);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -54,35 +55,35 @@
             // 
             arwToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { qToolStripMenuItem });
             arwToolStripMenuItem.Name = "arwToolStripMenuItem";
-            arwToolStripMenuItem.Size = new Size(61, 22);
+            arwToolStripMenuItem.Size = new Size(75, 24);
             arwToolStripMenuItem.Text = "Arquivo";
             arwToolStripMenuItem.Click += arwToolStripMenuItem_Click;
             // 
             // qToolStripMenuItem
             // 
             qToolStripMenuItem.Name = "qToolStripMenuItem";
-            qToolStripMenuItem.Size = new Size(93, 22);
+            qToolStripMenuItem.Size = new Size(117, 26);
             qToolStripMenuItem.Text = "Sair";
             qToolStripMenuItem.Click += qToolStripMenuItem_Click;
             // 
             // editarToolStripMenuItem
             // 
-            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem, usuáriosToolStripMenuItem });
+            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem, usuáriosToolStripMenuItem, agendaToolStripMenuItem });
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(49, 22);
+            editarToolStripMenuItem.Size = new Size(62, 24);
             editarToolStripMenuItem.Text = "Editar";
             // 
             // cadastrarToolStripMenuItem
             // 
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Size = new Size(224, 26);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // categoriasToolStripMenuItem
             // 
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(130, 22);
+            categoriasToolStripMenuItem.Size = new Size(224, 26);
             categoriasToolStripMenuItem.Text = "Categorias";
             categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
@@ -90,25 +91,32 @@
             // 
             usuáriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { listaUsuáriosToolStripMenuItem });
             usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            usuáriosToolStripMenuItem.Size = new Size(180, 22);
+            usuáriosToolStripMenuItem.Size = new Size(224, 26);
             usuáriosToolStripMenuItem.Text = "Usuários";
             usuáriosToolStripMenuItem.Click += usuáriosToolStripMenuItem_Click;
             // 
             // listaUsuáriosToolStripMenuItem
             // 
             listaUsuáriosToolStripMenuItem.Name = "listaUsuáriosToolStripMenuItem";
-            listaUsuáriosToolStripMenuItem.Size = new Size(146, 22);
+            listaUsuáriosToolStripMenuItem.Size = new Size(182, 26);
             listaUsuáriosToolStripMenuItem.Text = "Lista Usuários";
             listaUsuáriosToolStripMenuItem.Click += listaUsuáriosToolStripMenuItem_Click;
             // 
+            // agendaToolStripMenuItem
+            // 
+            agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
+            agendaToolStripMenuItem.Size = new Size(224, 26);
+            agendaToolStripMenuItem.Text = "Agenda";
+            agendaToolStripMenuItem.Click += agendaToolStripMenuItem_Click;
+            // 
             // frm_Principal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 270);
+            ClientSize = new Size(640, 360);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "frm_Principal";
             Text = "frm_Principal";
             Load += frm_Principal_Load;
@@ -128,5 +136,6 @@
         private ToolStripMenuItem categoriasToolStripMenuItem;
         private ToolStripMenuItem usuáriosToolStripMenuItem;
         private ToolStripMenuItem listaUsuáriosToolStripMenuItem;
+        private ToolStripMenuItem agendaToolStripMenuItem;
     }
 }
