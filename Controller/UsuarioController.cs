@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using Mysqlx.Expr;
 using ProjetoAgenda.data;
+using ProjetoAgenda.VariableGlobal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -73,6 +74,9 @@ namespace ProjetoAgenda.Controller
 
                 if (resultado.Read())
                 {
+                    UserSession.usuario = resultado.GetString("usuario");
+                    UserSession.nome = resultado.GetString("nome");
+                    UserSession.senha = resultado.GetString("senha");
                     return true;
                 }
                 else

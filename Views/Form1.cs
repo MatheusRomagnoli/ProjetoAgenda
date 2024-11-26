@@ -1,4 +1,5 @@
 using ProjetoAgenda.Controller;
+using ProjetoAgenda.VariableGlobal;
 using ProjetoAgenda.Views;
 
 namespace ProjetoAgenda

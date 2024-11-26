@@ -121,7 +121,7 @@ namespace ProjetoAgenda.Controller
             }
         }
 
-        public bool UpdateCategoria(int codigo, string nome_categoria)
+        public bool UpdateCategoria(int cod_categoria, string nome_categoria)
         {
             MySqlConnection conexao = null;
 
@@ -129,13 +129,14 @@ namespace ProjetoAgenda.Controller
             {
                 conexao = ConexaoDB.CriarConexao();
 
-                string sql = "UPDATE tb_categoria SET nome_categoria = @nome_categoria";
+                string sql = "UPDATE tb_categoria SET nome_categoria = @nome_categoria WHERE cod_categoria = @cod_categoria;";
 
                 conexao.Open();
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
                 comando.Parameters.AddWithValue("@nome_categoria", nome_categoria);
+                comando.Parameters.AddWithValue("@cod_categoria", cod_categoria);
                 int linhasafetadas = comando.ExecuteNonQuery();
                 conexao.Close();
 
