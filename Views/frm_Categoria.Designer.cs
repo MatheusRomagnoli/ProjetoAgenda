@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btn_update_categoria = new Button();
             btn_excluir = new Button();
             btn_cadastrar = new Button();
             txt_categoria = new TextBox();
             dgv_categoria = new DataGridView();
-            btn_update_categoria = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_categoria).BeginInit();
             SuspendLayout();
@@ -51,6 +51,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "insira o nome da nova categoria";
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // btn_update_categoria
+            // 
+            btn_update_categoria.Location = new Point(6, 140);
+            btn_update_categoria.Name = "btn_update_categoria";
+            btn_update_categoria.Size = new Size(207, 34);
+            btn_update_categoria.TabIndex = 3;
+            btn_update_categoria.Text = "update";
+            btn_update_categoria.UseVisualStyleBackColor = true;
+            btn_update_categoria.Click += btn_update_categoria_Click;
             // 
             // btn_excluir
             // 
@@ -90,16 +100,6 @@
             dgv_categoria.TabIndex = 1;
             dgv_categoria.CellContentClick += dgv_categoria_CellContentClick;
             // 
-            // btn_update_categoria
-            // 
-            btn_update_categoria.Location = new Point(6, 140);
-            btn_update_categoria.Name = "btn_update_categoria";
-            btn_update_categoria.Size = new Size(207, 34);
-            btn_update_categoria.TabIndex = 3;
-            btn_update_categoria.Text = "update";
-            btn_update_categoria.UseVisualStyleBackColor = true;
-            btn_update_categoria.Click += btn_update_categoria_Click;
-            // 
             // frm_Categoria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -109,6 +109,7 @@
             Controls.Add(groupBox1);
             Name = "frm_Categoria";
             Text = "frm_Categoria";
+            Load += frm_Categoria_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_categoria).EndInit();

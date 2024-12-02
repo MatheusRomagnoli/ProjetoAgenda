@@ -74,7 +74,7 @@ namespace ProjetoAgenda.Views
             }
 
 
-            
+
 
             AtualizaDataGrid();
         }
@@ -89,7 +89,7 @@ namespace ProjetoAgenda.Views
             int codigo = (int)dgv_categoria.SelectedRows[0].Cells[0].Value;
             CategoriaController controleCategoria = new CategoriaController();
             bool resultado = controleCategoria.UpdateCategoria(codigo, txt_categoria.Text);
-            
+
             if (resultado)
             {
                 MessageBox.Show("Categoria Alterada");
@@ -100,9 +100,14 @@ namespace ProjetoAgenda.Views
             }
 
 
-           
+
 
             AtualizaDataGrid();
+        }
+
+        private void frm_Categoria_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ProjetoAgenda.Controller;
+using ProjetoAgenda.VariableGlobal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,8 @@ namespace ProjetoAgenda.Views
 
         private void frm_Principal_Load(object sender, EventArgs e)
         {
-
+            string boas_vindas = $"Boas Vindas {UserSession.nome}";
+            lbl_boas_vindas.Text = boas_vindas;
         }
 
         private void qToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,6 +61,11 @@ namespace ProjetoAgenda.Views
         {
             frm_calendario frmcalendario = new frm_calendario();
             frmcalendario.ShowDialog();
+        }
+
+        private void lbl_boas_vindas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

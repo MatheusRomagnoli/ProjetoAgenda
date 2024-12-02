@@ -42,35 +42,39 @@
             // cmbCategoria
             // 
             cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(29, 172);
+            cmbCategoria.Location = new Point(25, 129);
+            cmbCategoria.Margin = new Padding(3, 2, 3, 2);
             cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(151, 28);
+            cmbCategoria.Size = new Size(133, 23);
             cmbCategoria.TabIndex = 0;
             cmbCategoria.SelectedIndexChanged += cmbCategoria_SelectedIndexChanged;
             // 
             // btn_cadastrar
             // 
-            btn_cadastrar.Location = new Point(29, 228);
+            btn_cadastrar.Location = new Point(25, 171);
+            btn_cadastrar.Margin = new Padding(3, 2, 3, 2);
             btn_cadastrar.Name = "btn_cadastrar";
-            btn_cadastrar.Size = new Size(94, 29);
+            btn_cadastrar.Size = new Size(82, 22);
             btn_cadastrar.TabIndex = 1;
             btn_cadastrar.Text = "cadastrar";
             btn_cadastrar.UseVisualStyleBackColor = true;
             // 
             // btn_alterar
             // 
-            btn_alterar.Location = new Point(29, 280);
+            btn_alterar.Location = new Point(25, 210);
+            btn_alterar.Margin = new Padding(3, 2, 3, 2);
             btn_alterar.Name = "btn_alterar";
-            btn_alterar.Size = new Size(94, 29);
+            btn_alterar.Size = new Size(82, 22);
             btn_alterar.TabIndex = 2;
             btn_alterar.Text = "alterar";
             btn_alterar.UseVisualStyleBackColor = true;
             // 
             // btn_excluir
             // 
-            btn_excluir.Location = new Point(29, 329);
+            btn_excluir.Location = new Point(25, 247);
+            btn_excluir.Margin = new Padding(3, 2, 3, 2);
             btn_excluir.Name = "btn_excluir";
-            btn_excluir.Size = new Size(94, 29);
+            btn_excluir.Size = new Size(82, 22);
             btn_excluir.TabIndex = 3;
             btn_excluir.Text = "excluir";
             btn_excluir.UseVisualStyleBackColor = true;
@@ -78,43 +82,45 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(353, 60);
+            dataGridView1.Location = new Point(309, 45);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(300, 188);
+            dataGridView1.Size = new Size(262, 141);
             dataGridView1.TabIndex = 4;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(27, 60);
+            textBox1.Location = new Point(24, 45);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(240, 61);
+            textBox1.Size = new Size(210, 47);
             textBox1.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(29, 30);
+            label1.Location = new Point(25, 22);
             label1.Name = "label1";
-            label1.Size = new Size(63, 20);
+            label1.Size = new Size(51, 15);
             label1.TabIndex = 6;
             label1.Text = "contato:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(29, 139);
+            label2.Location = new Point(25, 104);
             label2.Name = "label2";
-            label2.Size = new Size(81, 20);
+            label2.Size = new Size(64, 15);
             label2.TabIndex = 7;
             label2.Text = "categorias:";
             // 
             // frm_calendario
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(693, 450);
+            ClientSize = new Size(606, 301);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox1);
@@ -123,6 +129,7 @@
             Controls.Add(btn_alterar);
             Controls.Add(btn_cadastrar);
             Controls.Add(cmbCategoria);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frm_calendario";
             Text = "frm_calendario";
             Load += frm_calendario_Load;
