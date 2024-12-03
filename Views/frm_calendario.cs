@@ -17,6 +17,7 @@ namespace ProjetoAgenda.Controller
             InitializeComponent();
         }
 
+
         private void frm_calendario_Load(object sender, EventArgs e)
         {
             CategoriaController controleCategoria = new CategoriaController();
@@ -27,6 +28,11 @@ namespace ProjetoAgenda.Controller
         }
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_cadastrar_Click(object sender, EventArgs e)
         {
 
         }

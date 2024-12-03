@@ -99,3 +99,10 @@ END;
 $$
 
 DELIMITER ;
+
+CREATE TABLE tb_contato (
+	cod_contato INT AUTO_INCREMENT PRIMARY KEY,
+	nome_contato VARCHAR(20) NOT NULL,
+    categoria VARCHAR(20) NOT NULL,
+    usuario VARCHAR(20) NOT NULL
+    );
